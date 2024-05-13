@@ -36,9 +36,9 @@ def changer_variable():
 ma_variable = 0
 
 # Planifiez l'exécution de la fonction changer_variable() chaque seconde
-schedule.every().second.do(changer_variable)
+schedule.every(0.001).seconds.do(changer_variable)
 
 # Boucle d'exécution infinie
 while True:
     schedule.run_pending()
-    time.sleep(1)  # Attendez 1 seconde avant de vérifier à nouveau le planning
+    time.sleep(0.001)  # Attendez 1 seconde avant de vérifier à nouveau le planning
