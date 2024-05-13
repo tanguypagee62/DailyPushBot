@@ -23,18 +23,11 @@ def git_push():
     # Poussez les modifications vers le dépôt distant
     repo.git.push()
 
-# Planifiez l'exécution de la fonction git_push() à minuit chaque jour
-schedule.every().day.at("16:09").do(git_push)
-schedule.every().day.at("16:10").do(git_push)
-schedule.every().day.at("16:11").do(git_push)
-schedule.every().day.at("16:12").do(git_push)
-schedule.every().day.at("16:13").do(git_push)
-schedule.every().day.at("16:14").do(git_push)
-schedule.every().day.at("16:15").do(git_push)
-schedule.every().day.at("16:16").do(git_push)
+# Planifiez l'exécution de la fonction git_push() à l'heure spécifiée chaque jour
 schedule.every().day.at("16:17").do(git_push)
+schedule.every().day.at("16:18").do(git_push)
 
-# Boucle d'exécution
+# Boucle d'exécution infinie
 while True:
     schedule.run_pending()
-    time.sleep(5)  # Attendez 60 secondes avant de vérifier à nouveau le planning
+    time.sleep(1)  # Attendez 1 seconde avant de vérifier à nouveau le planning
