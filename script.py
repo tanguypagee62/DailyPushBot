@@ -23,7 +23,7 @@ def git_push():
     # Poussez les modifications vers le dépôt distant
     repo.git.push()
 
-# Planifiez l'exécution de la fonction git_push() à l'heure spécifiée chaque jour
+# Planifiez l'exécution de la fonction git_push() chaque seconde
 schedule.every().second.do(git_push)
 
 # Boucle d'exécution infinie
