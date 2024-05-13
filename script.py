@@ -28,6 +28,8 @@ def changer_variable():
     global ma_variable  # Indique que nous utilisons la variable globale ma_variable
     print("Valeur actuelle de ma_variable:", ma_variable)
     ma_variable += 1  # Incrémente la variable
+    with open('fichier.txt', 'a') as f:
+        f.write('a\n')  # Ajoute une ligne avec un 'a' à chaque fois que la fonction est appelée
     git_push()  # Appel de la fonction pour effectuer le push sur Git à chaque changement de la variable
 
 # Initialisez la variable
