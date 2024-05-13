@@ -23,8 +23,18 @@ def git_push():
     # Poussez les modifications vers le dépôt distant
     repo.git.push()
 
-# Planifiez l'exécution de la fonction git_push() chaque seconde
-schedule.every().second.do(git_push)
+# Fonction pour afficher et modifier une variable
+def changer_variable():
+    global ma_variable  # Indique que nous utilisons la variable globale ma_variable
+    print("Valeur actuelle de ma_variable:", ma_variable)
+    ma_variable += 1  # Incrémente la variable
+    git_push()  # Appel de la fonction pour effectuer le push sur Git à chaque changement de la variable
+
+# Initialisez la variable
+ma_variable = 0
+
+# Planifiez l'exécution de la fonction changer_variable() chaque seconde
+schedule.every().second.do(changer_variable)
 
 # Boucle d'exécution infinie
 while True:
