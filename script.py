@@ -24,8 +24,15 @@ def git_push():
     repo.git.push()
 
 # Planifiez l'exécution de la fonction git_push() à minuit chaque jour
-schedule.every().day.at("16:06").do(git_push)
-schedule.every().day.at("12:00").do(git_push)
+schedule.every().day.at("16:09").do(git_push)
+schedule.every().day.at("16:10").do(git_push)
+schedule.every().day.at("16:11").do(git_push)
+schedule.every().day.at("16:12").do(git_push)
+schedule.every().day.at("16:13").do(git_push)
+schedule.every().day.at("16:14").do(git_push)
+schedule.every().day.at("16:15").do(git_push)
+schedule.every().day.at("16:16").do(git_push)
+schedule.every().day.at("16:17").do(git_push)
 
 # Boucle d'exécution
 while True:
