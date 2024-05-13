@@ -3,6 +3,8 @@ import time
 import os
 from git import Repo
 
+monBool = True
+
 # Fonction pour effectuer le push sur GitHub
 def git_push():
     # Chemin vers le répertoire de votre projet
@@ -22,9 +24,13 @@ def git_push():
 
     # Poussez les modifications vers le dépôt distant
     repo.git.push()
+    
+    
 
 # Planifiez l'exécution de la fonction git_push() à l'heure spécifiée chaque jour
-schedule.every().second.do(git_push)
+if monBool == True:
+    schedule.every().second.do(git_push)
+    monBool = True
 
 # Boucle d'exécution infinie
 while True:
