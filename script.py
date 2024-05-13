@@ -41,4 +41,4 @@ schedule.every(0.001).seconds.do(changer_variable)
 # Boucle d'exécution infinie
 while True:
     schedule.run_pending()
-    time.sleep(0.001)  # Attendez 1 seconde avant de vérifier à nouveau le planning
+    time.sleep(1)  # Attendez 1 seconde avant de vérifier à nouveau le planning
