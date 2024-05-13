@@ -42,3 +42,5 @@ schedule.every(0.001).seconds.do(changer_variable)
 while True:
     schedule.run_pending()
     time.sleep(1)  # Attendez 1 seconde avant de vérifier à nouveau le planning
+    
+#TestTestTest
